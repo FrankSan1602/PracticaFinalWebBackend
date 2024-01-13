@@ -1,0 +1,64 @@
+<div class="mt-3"></div>
+<div class="container">
+  <div class="card border-info mb-3">
+    <div class="card-header text-primary">
+      <h1 class="text-center">
+        {{ titulo }}
+      </h1>
+    </div>
+    <div class="card-body text-primary table-responsive">
+      <form>
+        <div class="mb-3">
+          <label for="nombreEv">Nombre del Evento</label>
+          <input
+            type="text"
+            class="form-control"
+            name="nombreEv"
+            [(ngModel)]="evento.nombreEvento"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="descripcion">Descripción del Evento</label>
+          <input
+            type="text"
+            class="form-control"
+            name="descripcion"
+            [(ngModel)]="evento.descripcionEvento"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="fechaCr">Fecha de Creación</label>
+          <input
+            type="date"
+            class="form-control"
+            name="fechaCr"
+            [(ngModel)]="evento.fechaCreacion"
+          />
+        </div>
+
+        <div class="mb-3">
+          <button
+            class="btn btn-outline-success form-control"
+            type="button"
+            (click)="registrarEvento()"
+          >
+            Registrar Evento
+          </button>
+          
+        </div>
+
+        <div class="mb-3">
+        <button
+          class="btn btn-outline-success form-control"
+          type="button"
+          (click)="verEventos()"
+        >
+          Ver Eventos
+        </button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>

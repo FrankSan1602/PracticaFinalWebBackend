@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-image: url('./assets/march_casual.png');
+    background-size:contain; /* Ajusta el tamaño de la imagen para cubrir el fondo */
+    background-position: left; /* Centra la imagen en el fondo */
+    background-repeat: repeat; /* Evita la repetición de la imagen */
+    margin: 0; /* Elimina los márgenes por defecto del body */
+    height: 100vh; /* Asegura que el fondo ocupe toda la altura visible del viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

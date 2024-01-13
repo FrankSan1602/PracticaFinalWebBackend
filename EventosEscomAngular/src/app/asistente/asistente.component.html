@@ -1,0 +1,75 @@
+<div class="mt-3"></div>
+<div class="container border-primary">
+  <div class="card text-center">
+    <div class="card-header text-primary text-center">
+      <h1 class="card-header">
+        {{ titulo }}
+      </h1>
+    </div>
+    <div class="card-body text-primary">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <td>idAsistente</td>
+            <td>nombre</td>
+            <td>Paterno</td>
+            <td>Materno</td>
+            <td>Email</td>
+            <td>idEvento</td>
+            <td>fechaRegistro</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let asis of listaDeAsistentes">
+            <td>{{ asis.idAsistente }}</td>
+            <td>{{ asis.nombre }}</td>
+            <td>{{ asis.paterno }}</td>
+            <td>{{ asis.materno }}</td>
+            <td>{{ asis.email}}</td>
+            <td>{{ asis.idEvento.nombreEvento }}</td>
+            <td>{{ asis.fechaRegistro | date: 'dd-MM-yyyy'}}</td>
+            <td>
+              <a class="btn btn-outline-danger" (click)="delete(asis)">
+                Eliminar
+              </a>
+            </td>
+            <td>
+              <a class="btn btn-outline-success" (click)="update(asis, listaDeEventos)"> Actualizar </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mb-3">
+      <button
+        class="btn btn-outline-success form-control"
+        type="button"
+        (click)="verEventos()"
+      >
+        Ver Eventos
+      </button>
+    </div>
+
+    <div class="mb-3">
+      <button
+        class="btn btn-outline-success form-control"
+        type="button"
+        (click)="descargaReporte()"
+      >
+        Descargar Reporte
+      </button>
+    </div>
+
+    <div class="mb-3">
+      <button
+        class="btn btn-outline-success form-control"
+        type="button"
+        (click)="registrarAsistente()"
+      >
+        Registrar Asistentes
+      </button>
+    </div>
+
+  </div>
+</div>

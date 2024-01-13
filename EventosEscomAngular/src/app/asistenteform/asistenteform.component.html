@@ -1,0 +1,97 @@
+<div class="mt-3"></div>
+<div class="container">
+  <div class="card border-info mb-3">
+    <div class="card-header text-primary">
+      <h1 class="text-center">
+        {{ titulo }}
+      </h1>
+    </div>
+    <div class="card-body text-primary table-responsive">
+      <form>
+        <div class="mb-3">
+          <label for="nombre">Nombre(s)</label>
+          <input
+            type="text"
+            class="form-control"
+            name="nombre"
+            [(ngModel)]="asistente.nombre"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="paterno">Apellido paterno</label>
+          <input
+            type="text"
+            class="form-control"
+            name="paterno"
+            [(ngModel)]="asistente.paterno"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="materno">Apellido materno</label>
+          <input
+            type="text"
+            class="form-control"
+            name="materno"
+            [(ngModel)]="asistente.materno"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="email">Correo electrónico (e-mail)</label>
+          <input
+            type="text"
+            class="form-control"
+            name="email"
+            [(ngModel)]="asistente.email"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="fecha">Fecha de registro</label>
+          <input
+            type="date"
+            class="form-control"
+            name="fecha"
+            [(ngModel)]="asistente.fechaRegistro"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="eventos">Evento a registrar</label>
+          <select
+            class="form-control"
+            [(ngModel)]="asistente.idEvento"
+            name="eventos"
+          >
+            <option [ngValue]="">Seleccionar evento</option>
+            <option *ngFor="let ev of listaDeEventos" [ngValue]="ev">
+              {{ ev.nombreEvento }}
+            </option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <button
+            class="btn btn-outline-success form-control"
+            type="button"
+            (click)="registrarAsistente()"
+          >
+            Registrar Asistente
+          </button>
+        </div>
+
+        <div class="mb-3">
+          <button
+            class="btn btn-outline-success form-control"
+            type="button"
+            (click)="verAsistentes()"
+          >
+            Ver Asistentes
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
